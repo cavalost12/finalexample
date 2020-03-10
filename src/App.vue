@@ -19,7 +19,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import axios from "axios";
 
-const apiFtUrl = 'http://api.ft.com/content/search/v1';
+const apiFtUrl = process.env.FT_API;
  
     export default {
         name: 'App',
@@ -47,7 +47,7 @@ const apiFtUrl = 'http://api.ft.com/content/search/v1';
                 }, {
                     headers: {
                        'Content-Type': 'application/json',
-                       'X-Api-Key': '59cbaf20e3e06d3565778e7b7aeb55cf55a24adf82b8d09d67cc6d71'
+                       'X-Api-Key': process.env.API_KEY
                     }
                 });
                 this.messages = data.results[0].results;
